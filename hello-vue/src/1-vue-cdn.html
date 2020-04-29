@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/vue-menu.css">
+  <title>Vue CDN</title>
+</head>
+
+<body>
+  <header id="navbar">
+    <vue-menu :ecosystem="vueEcosystem" />
+  </header>
+  <h1>Vue CDN</h1>
+  <section id="root">
+    <h1>Hello world {{message}}</h1>
+  </section>
+  <section id="root2">
+    <h1>Hello world {{vue_tech}}</h1>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#root",
+      data: {
+        message: "Vue"
+      }
+    })
+    let app2 = new Vue({
+      el: "#root2",
+      data: {
+        vue_tech: "Vuex"
+      }
+    })
+  </script>
+  <script src="js/vue-menu.js"></script>
+</body>
+
+</html>

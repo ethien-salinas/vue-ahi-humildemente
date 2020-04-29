@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/vue-menu.css">
+  <title>Vue For</title>
+  <style>
+    th,
+    td {
+      padding: 15px 30px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="navbar">
+    <vue-menu :ecosystem="vueEcosystem" />
+  </header>
+  <h1>Vue For (table)</h1>
+  <section id="root">
+    <table>
+      <thead>
+        <th>Id</th>
+        <th>Tech</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr v-for='(techItem) in vueEcosystem'>
+          <td>{{techItem.id}}</td>
+          <td>{{techItem.tech}}</td>
+          <td>{{techItem.desc}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#root",
+      data: {
+        vueEcosystem: [
+          { id: 0, tech: 'vue', desc: 'Vue core' },
+          { id: 1, tech: 'vuex', desc: 'State management' },
+          { id: 2, tech: 'vue cli', desc: 'Vue command line interface' },
+          { id: 3, tech: 'nuxt', desc: 'SSR' },
+          { id: 4, tech: 'vue router', desc: 'Vue routing tech' },
+          { id: 5, tech: 'vue devtools', desc: 'Tools to inspect vue instances' }
+        ]
+      }
+    })
+  </script>
+  <script src="js/vue-menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+/* Google fonts - Open Sans */
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+
+:root {
+  --jellyfish-1-hex: #0424d9;
+  --jellyfish-2-hex: #031ca6;
+  --jellyfish-3-hex: #03178c;
+  --jellyfish-4-hex: #020f59;
+  --jellyfish-5-hex: #3dadf2;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 30px;
+  min-height: 60px;
+  width: 100%;
+}
+
+nav ul {
+  background-color: var(--jellyfish-1-hex);
+  display: flex;
+  list-style-type: none;
+  font-size: 1rem;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+li {
+  margin: 21px;
+}
+
+li a {
+  color: var(--jellyfish-5-hex);
+  text-decoration: none;
+  transition: box-shadow 0.3s;
+}
+
+li a:hover {
+  box-shadow: 0 3px 0 var(--jellyfish-4-hex);
+}
+
+@media (max-width: 650px) {
+  nav ul {
+    flex-wrap: wrap;
+  }
+}

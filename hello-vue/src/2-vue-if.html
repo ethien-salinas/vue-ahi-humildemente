@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/vue-menu.css">
+  <title>Vue If</title>
+</head>
+
+<body>
+  <header id="navbar">
+    <vue-menu :ecosystem="vueEcosystem" />
+  </header>
+  <h1>Vue If</h1>
+  <section id="root">
+    <p v-if='isNewInVue'>learning vue</p>
+    <p v-else='isNewInVue'>mastering vue</p>
+    <p v-show='isNewInVue'>learning JS frameworks</p>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#root",
+      data: {
+        isNewInVue: false
+      }
+    })
+  </script>
+  <script src="js/vue-menu.js"></script>
+</body>
+
+</html>

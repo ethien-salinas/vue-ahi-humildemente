@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/vue-menu.css">
+  <title>Vue For Exercise</title>
+</head>
+
+<body>
+  <header id="navbar">
+    <vue-menu :ecosystem="vueEcosystem" />
+  </header>
+  <h1>Vue For</h1>
+  <section id="root">
+    <p v-for='(vueTech, idx) in vueEcosystem'>{{idx}} - learning {{vueTech}}</p>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#root",
+      data: {
+        vueEcosystem: [
+          'vue',
+          'vuex',
+          'vue cli',
+          'nuxt',
+          'vue router',
+          'vue devtools',
+        ]
+      }
+    })
+  </script>
+  <script src="js/vue-menu.js"></script>
+</body>
+
+</html>
