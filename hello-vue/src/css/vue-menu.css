@@ -31,8 +31,12 @@ nav ul {
   display: flex;
   list-style-type: none;
   font-size: 1rem;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin: 0px;
+}
+
+nav ul > :first-child {
+  margin-right: auto;
 }
 
 li {
