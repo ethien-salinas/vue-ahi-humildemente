@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/vue-menu.css">
+  <title>Vue For</title>
+  <style>
+    th,
+    td {
+      padding: 15px 30px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="navbar">
+    <vue-menu :ecosystem="vueEcosystem" />
+  </header>
+  <h1>Vue component</h1>
+  <section id="root">
+    <hello-world-component v-bind:arrayData=vueEcosystem />
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component('hello-world-component', {
+      props: ['arraydata'],
+      template:
+        `<div>
+          <div v-for='(vueTech) in arraydata'>
+            <p>Vue Tech: {{vueTech}}</p>
+          </div>
+        </div>`
+    })
+    let app = new Vue({
+      el: "#root",
+      data: {
+        vueEcosystem: [
+          'vue core',
+          'vuex',
+          'vue cli',
+          'nuxt',
+          'vue router',
+          'vue devtools',
+        ]
+      }
+    })
+  </script>
+  <script src="js/vue-menu.js"></script>
+</body>
+
+</html>
